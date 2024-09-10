@@ -46,3 +46,9 @@ This directory contains implementations of Breadth-First Search (BFS), Depth-Fir
     <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZG8zN3p5OTYzNXRkdDIyOHExZDE3ODJrNGMyNDNla2libWtjeXB4cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uSeXREed0RSfcTseo0/giphy.webp" width="400" height="300" />
 
    [Access the Non-AI Version Python File](Hassaan_Ali_Bukhari_CS351L_Lab01_Non-AI%20Version.py)
+
+<br>
+
+4. **Number Guessing Game Using Binary Search**
+
+    [Access the Binary Search Number Guessing Game Python File](Hassaan_Ali_Bukhari_CS351L_Lab01_Number_Guessing_Game.py)
