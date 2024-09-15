@@ -7,7 +7,7 @@ Welcome to the **AI Lab Course (CS 351L)**! In this repository, you will explore
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-## 📚 **Course Overview**
+## 📚 **Course Content**
 
 - **Course Code:** CS 351L  
 - **Program:** BS Cybersecurity  
@@ -51,7 +51,13 @@ For any queries or assistance, feel free to reach out to the course instructor:
 ## 🙋‍♂️ **Maintainer**
 
 This repository is maintained by:  
-**Hassaan Ali Bukhari**  
-**GitHub:** [b3ta-blocker](https://github.com/b3ta-blocker)
+**Saad Ali**  
+**GitHub:** [saadali112](https://github.com/saadali112)
+
+##🌟 **Final Note**
+
+Embarking on this AI journey is more than just learning algorithms—it's about shaping the future. Each exercise and project you complete brings you closer to mastering AI tools that have the potential to solve some of the world’s most pressing problems. Keep exploring, stay curious, and remember: in the world of AI, the possibilities are limitless.
+
+Happy learning, and let your creativity lead the way! 🚀
 
 ---
