@@ -29,6 +29,7 @@ The A* algorithm is used for finding the shortest path between an initial and a 
 </div>
 
 <!-- Source code link -->
+
 You can find the source code for the A* algorithm implementation [here](A%2A%20Search%20Algorithm.py).
 
 <br>
@@ -77,5 +78,7 @@ In this program, you will:
 4. **Pathfinding**: 
    - Adjust the pathfinding algorithm to consider both rewards and ghost positions.
 
+<br>
 
+**You can find the source code for Escape the Haunted Maze [here](Escape_the_Haunted_Maze.py).**
 
