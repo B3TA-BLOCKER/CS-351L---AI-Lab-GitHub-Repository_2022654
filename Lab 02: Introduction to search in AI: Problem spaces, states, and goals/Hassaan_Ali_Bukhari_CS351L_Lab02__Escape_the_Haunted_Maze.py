@@ -3,7 +3,7 @@ import random  # Importing random to place the treasure, ghosts, and rewards ran
 
 
 # Function to create a maze grid with ghosts, safe zones, rewards, and a treasure
-def create_haunted_maze_with_rewards(size, wall_prob, num_ghosts, num_safe_zones, num_rewards):
+def create_haunted_maze_with_rewards(size, wall_prob, num_rewards):
     grid = [[' ' for _ in range(size)] for _ in range(size)]  # Create an empty grid filled with spaces
     grid[0][0] = 'S'  # 'S' marks the starting point at the top-left corner (0,0)
 
@@ -12,29 +12,8 @@ def create_haunted_maze_with_rewards(size, wall_prob, num_ghosts, num_safe_zones
         for y in range(size):
             if (x, y) != (0, 0):  # Ensure the start 'S' is not overwritten
                 if random.random() < wall_prob:  # Decide whether to place a wall based on probability
-                    grid[x][y] = 'X'
+                    grid[x][y] = '👻'
 
-    # For Exiting the maze
-    treasure_x, treasure_y = random.randint(0, size-1), random.randint(0, size-1)
-    while (treasure_x, treasure_y) == (0, 0) or grid[treasure_x][treasure_y] == 'X':
-        treasure_x, treasure_y = random.randint(0, size-1), random.randint(0, size-1)
-    grid[treasure_x][treasure_y] = '🚪'  
-
-    # ghosts ('👻') at random positions
-    ghosts = []
-    for _ in range(num_ghosts):
-        ghost_x, ghost_y = random.randint(0, size-1), random.randint(0, size-1)
-        while grid[ghost_x][ghost_y] in ['S', 'T', 'X', 'G']:
-            ghost_x, ghost_y = random.randint(0, size-1), random.randint(0, size-1)
-        grid[ghost_x][ghost_y] = '👻'
-        ghosts.append((ghost_x, ghost_y))
-
-    # safe zones ('🛡️') at random positions
-    for _ in range(num_safe_zones):
-        safe_x, safe_y = random.randint(0, size-1), random.randint(0, size-1)
-        while grid[safe_x][safe_y] in ['S', 'T', 'X', 'G', 'Z']:
-            safe_x, safe_y = random.randint(0, size-1), random.randint(0, size-1)
-        grid[safe_x][safe_y] = '🛡️'
 
     # rewards ('🌟') at random positions
     rewards = []
@@ -45,13 +24,20 @@ def create_haunted_maze_with_rewards(size, wall_prob, num_ghosts, num_safe_zones
         grid[reward_x][reward_y] = '🌟'
         rewards.append((reward_x, reward_y))
 
-    return grid, (treasure_x, treasure_y), rewards, ghosts
+      
+    # For Exiting the maze
+    treasure_x, treasure_y = random.randint(0, size-1), random.randint(0, size-1)
+    while (treasure_x, treasure_y) == (0, 0) or grid[treasure_x][treasure_y] == 'X':
+        treasure_x, treasure_y = random.randint(0, size-1), random.randint(0, size-1)
+    grid[treasure_x][treasure_y] = '🚪' 
+
+    return grid, (treasure_x, treasure_y), rewards
 
 
 # Function to check if a position is valid (within bounds, not blocked by a wall, or occupied by a ghost)
 def is_valid_position(grid, x, y):
     size = len(grid)
-    return 0 <= x < size and 0 <= y < size and grid[x][y] != 'X'  # Return true if position is valid
+    return 0 <= x < size and 0 <= y < size and grid[x][y] != '👻'  # Return true if position is valid
 
 
 # Heuristic function: Calculates the Manhattan distance between the current node and the goal
@@ -59,7 +45,7 @@ def heuristic(a, b):
     return abs(a[0] - b[0]) + abs(a[1] - b[1])  # Manhattan distance
 
 
-# A* algorithm function to maximize rewards
+# A* algorithm function to maximize rewards and avoid ghosts
 def a_star_with_rewards(grid, start, goal):
     size = len(grid)
     open_list = []
@@ -106,13 +92,13 @@ def a_star_with_rewards(grid, start, goal):
         if current in parent:
             current = parent[current]
         else:
-            # If a key error occurs, it means the path cannot be reconstructed. Return an empty path.
             print("No path found.")
             return []
 
     path.reverse()
-
     return path
+
+
 
 # Function to print the grid with lines and the path marked
 def print_grid_with_path(grid, path):
@@ -132,11 +118,9 @@ def print_grid_with_path(grid, path):
 def haunted_maze_escape_with_rewards():
     size = int(input("Enter the grid size (e.g., 6 for a 6x6 grid): "))
     wall_prob = 0.3
-    num_ghosts = int(input("Enter the number of ghosts: "))
-    num_safe_zones = int(input("Enter the number of safe zones: "))
     num_rewards = int(input("Enter the number of rewards: "))
 
-    grid, goal, rewards, ghosts = create_haunted_maze_with_rewards(size, wall_prob, num_ghosts, num_safe_zones, num_rewards)
+    grid, goal, rewards = create_haunted_maze_with_rewards(size, wall_prob, num_rewards)
 
     print("\nInitial Grid:")
     print_grid_with_path(grid, [])
@@ -148,8 +132,9 @@ def haunted_maze_escape_with_rewards():
     print_grid_with_path(grid, path)
 
     print("\nRewards Collected:")
-    collected_rewards = sum(1 for (x, y) in rewards if grid[x][y] == '*')
+    collected_rewards = sum(1 for (x, y) in rewards if (x, y) in path)
     print(f"Total Rewards Collected: {collected_rewards}")
+
 
 # Run the game
 haunted_maze_escape_with_rewards()
