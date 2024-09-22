@@ -80,5 +80,5 @@ In this program, you will:
 
 <br>
 
-**You can find the source code for Escape the Haunted Maze [here](Hassaan_Ali_Bukhari_CS351L_Lab02__Escape_the_Haunted_Maze.py).**
+**You can find the source code for Escape the Haunted Maze [here](Escape_the_Haunted_Maze.py).**
 
