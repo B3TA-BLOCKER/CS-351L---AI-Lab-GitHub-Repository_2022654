@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 from names import nodes
 from relation import relationships
+from color_map import color_map
 
 # Create a graph
 G = nx.Graph()
@@ -15,18 +16,6 @@ for person, friends in relationships.items():
     for friend, relation in friends.items():
         G.add_edge(person, friend, relation=relation)
 
-# Define colors for relationship types (for nodes)
-color_map = {
-    'best friend': 'red',
-    'close friend': 'green',
-    'normal friend': 'yellow',
-    'friend': 'orange',
-    'acquaintance': 'gray',
-    'sister': 'pink',
-    'brother': 'blue',
-    'father': 'black',
-    'mother': 'brown'
-}
 
 # Define the search person
 search_person = input("Enter the name of he person to search for : ")
