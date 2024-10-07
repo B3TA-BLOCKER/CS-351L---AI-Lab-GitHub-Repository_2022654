@@ -17,7 +17,7 @@
 
 - **CS351L_Lab3.pdf**: This file contains the lab task instructions for Lab 03 on Constraint Satisfaction Problems (CSP).
   
-- **Hassaan_Ali_Bukhari_CS351L_Lab03/**: This directory contains Python implementations for solving CSP-related problems.
+- **[Hassaan_Ali_Bukhari_CS351L_Lab03](./Hassaan_Ali_Bukhari_CS351L_Lab03/)**: This directory contains Python implementations for solving CSP-related problems.
 
   - **color_map.py**: Python script that uses CSP to solve a color map problem.
   
@@ -26,7 +26,6 @@
   - **names.py**: Script handling a dataset of names and associated operations within the CSP context.
   
   - **relation.py**: Python script managing the relationships or constraints used in the CSP task.
-  
   
 ---
 
@@ -38,4 +37,19 @@ In this lab, we explored Constraint Satisfaction Problems (CSP), a core concept 
 
 ---
 
+## Description of `main.py`
 
+The `main.py` file is responsible for creating a graphical representation of a social network based on predefined nodes and relationships. It uses the `matplotlib` and `networkx` libraries to visualize connections between individuals in the network.
+
+- **Key Features**:
+  - Nodes represent individuals with attributes like age.
+  - Edges represent relationships between individuals, color-coded based on the type of relationship (using the `color_map.py` script).
+  - Users can input a person's name to generate a subgraph of that person and their direct connections.
+  - The graph is displayed with nodes, edges, and labels showing the person's name and age.
+  - The search person's node is highlighted in the final visualization.
+  
+The script provides a simple but effective way to visualize relationships in a social network, making it easier to analyze individual connections and their significance.
+
+--- 
+
+The directory contains the lab task which was performed in the lab.
