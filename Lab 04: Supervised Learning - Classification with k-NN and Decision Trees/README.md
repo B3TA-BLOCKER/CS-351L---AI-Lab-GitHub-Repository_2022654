@@ -57,4 +57,4 @@ In this lab, we aim to predict whether passengers survived the Titanic disaster 
 ## Source Code
 The complete source code for this lab can be found in the following Jupyter Notebook:
 
-[Hassaan_Ali_Bukhari_CS351L_Lab04.ipynb](https://github.com/B3TA-BLOCKER/Hassaan_Ali_Bukhari_CS351L_Lab04.ipynb)
+[Hassaan_Ali_Bukhari_CS351L_Lab04.ipynb](https://github.com/B3TA-BLOCKER/CS-351L---AI-Lab-GitHub-Repository_2022654/blob/main/Lab%2004%3A%20Supervised%20Learning%20-%20Classification%20with%20k-NN%20and%20Decision%20Trees/Hassaan_Ali_Bukhari_CS351L_Lab04.ipynb)
